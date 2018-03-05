@@ -45,7 +45,9 @@ export const otherRouter = {
     name: 'otherRouter',
     component: Main,
     children: [
-        { path: 'home', title: {i18n: 'home'}, name: 'home_index', component: resolve => { require(['@/views/home/home.vue'], resolve); } }
+        { path: '', title: {i18n: 'home'}, name: 'home_index', component: resolve => { require(['@/views/home/home.vue'], resolve); } },
+        { path: 'information/details', title:'资讯详情', name: 'information_details', component: resolve => { require(['@/views/information/details/details.vue'], resolve); } }
+
     ]
 };
 
@@ -57,33 +59,21 @@ var app1= [
         path: '/group',
         icon: 'ios-folder',
         name: 'group',
-        title: '系统权限设置',
+        title: '角色管理',
         component: Main,
         children: [
-            {
-                id:2,
-                path: 'page1',
-                icon: 'locked',
-                name: 'page1',
-                title: '权限管理',
-                component: resolve => { require(['@/views/group/page1/page1.vue'], resolve); }
-            },
-            {
-                id:3,
-                path: 'page2',
-                icon: 'person',
-                name: 'page2',
-                title: '角色管理',
-                component: resolve => { require(['@/views/group/page2/page2.vue'], resolve); }
-            },
-            {
-                id:4,
-                path: 'page3',
-                icon: 'network',
-                name: 'page3',
-                title: '组织管理',
-                component: resolve => { require(['@/views/group/page3/page3.vue'], resolve); }
-            }
+            { path: 'index', title: 'Page', name: 'group', component: resolve => { require(['@/views/group/page2/page2.vue'], resolve); } }
+        ]
+    },
+    {
+        id:9,
+        path: '/third',
+        icon: 'ios-cog',
+        title: '第三方平台管理',
+        name: 'third',
+        component: Main,
+        children: [
+            { path: 'index', title: 'third', name: 'third_index', component: resolve => { require(['@/views/third/third.vue'], resolve); } }
         ]
     },
     {
@@ -92,7 +82,7 @@ var app1= [
         icon: 'ios-search',  
         title: '搜索管理',
         name: 'page',
-        component: Main,
+        component: Main,    
         children: [
             { 
                 id:15,
@@ -151,17 +141,6 @@ var app1= [
         component: Main,
         children: [
             { path: 'index', title: 'Page', name: 'user_index', component: resolve => { require(['@/views/user/user.vue'], resolve); } }
-        ]
-    },
-    {
-        id:9,
-        path: '/third',
-        icon: 'ios-cog',
-        title: '第三方平台管理',
-        name: 'third',
-        component: Main,
-        children: [
-            { path: 'index', title: 'third', name: 'third_index', component: resolve => { require(['@/views/third/third.vue'], resolve); } }
         ]
     },
     {

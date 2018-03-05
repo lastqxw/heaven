@@ -98,7 +98,7 @@ export default {
                                 },
                                 on: {
                                     click: () => {
-                                        this.show(params.index)
+                                        this.to(params.index)
                                     }
                                 }
                             }, '详情'),
@@ -177,6 +177,15 @@ export default {
                 content: `序号：${this.data6[index].id}<br>发布人：${this.data6[index].name}<br>内容创建时间：${this.data6[index].time}<br>分类：${this.data6[index].lei}<br>所属模板：${this.data6[index].muban}<br>`
             })
         },
+        to(index){
+            this.$router.push({
+                path: '/information/details', 
+                name: 'information_details',
+                params: { 
+                    "id":this.data6[index].id
+                }
+            })
+        },
         remove (index) {
             this.data6.splice(index, 1);
         },
@@ -193,3 +202,4 @@ export default {
     }
 };
 </script>
+ 
