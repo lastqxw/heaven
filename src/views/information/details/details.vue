@@ -75,7 +75,7 @@
             </div>
         </div>
         <div class="active"></div>
-         <Tag type="dot" closable color="blue" style="display:block;margin-top:20px;width:200px">评论列表</Tag>
+         <Tag type="dot" closable color="blue" style="display:block;margin-top:20px;width:230px">评论列表</Tag>
         <Row type="flex" align="top" class="code-row-bg" :gutter="16">
             <Col span="18" style="background-color:#fff;height:300px;overflow-y: scroll">
                 <Table border :columns="columns7" :data="data6"></Table>

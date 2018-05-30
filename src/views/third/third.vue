@@ -7,8 +7,8 @@
         <div class="add_hot">
             <h3>查询第三方</h3>
             <Form ref="formInline" :model="formInline" :rules="ruleInline" inline>
-                <FormItem prop="user" label="第三方昵称">
-                    <Input type="text" v-model="formInline.user" placeholder="第三方昵称" :style="{ width: width+'px', marginLeft: marginLeft + 'px' }">
+                <FormItem prop="user" label="第三方昵称" :style="{ width: width+'px', marginLeft: marginLeft + 'px' }">
+                    <Input type="text" v-model="formInline.user" placeholder="第三方昵称" >
                         <Icon type="ios-person-outline" slot="prepend"></Icon>
                     </Input>
                 </FormItem>
@@ -69,6 +69,18 @@ export default {
                             h('Button', {
                                 props: {
                                     type: 'error',
+                                    size: 'small'
+                                },
+                                
+                                on: { 
+                                    click: () => {
+                                        this.remove(params.index)
+                                    }
+                                }
+                            }, '删除'),
+                            h('Button', {
+                                props: {
+                                    type: 'success',
                                     size: 'small'
                                 },
                                 on: { 

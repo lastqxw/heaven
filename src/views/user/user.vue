@@ -3,7 +3,7 @@
 </style>
 <template>
     <div id="app">
-        <h1>资讯管理</h1> 
+        <h1>用户管理</h1> 
         <div class="add_hot">
             <h3>查询账号</h3>
             <Form ref="formInline" :model="formInline" :rules="ruleInline" inline>
